@@ -1,0 +1,30 @@
+{
+  "name": "evaluate",
+  "version": "1.0.0",
+  "description": "Evaluate your variables",
+  "main": "index.js",
+  "scripts": {
+    "test": "scripts/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thebergamo/evaluate.git"
+  },
+  "keywords": [
+    "evaluate",
+    "default",
+    "var"
+  ],
+  "author": "Marcos Bérgamo <marcos@thedon.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thebergamo/evaluate/issues"
+  },
+  "homepage": "https://github.com/thebergamo/evaluate",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.3.20",
+    "mocha": "^2.3.2"
+  }
+}
