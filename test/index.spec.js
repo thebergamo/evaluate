@@ -38,6 +38,14 @@ describe('Evaluate', function(){
 			expect(ret).to.be.eql(0);
 		});
 
+		it('when a type number and default value is specified', function(){
+			var vari;
+			var ret = evaluate(vari, 'number', 10);
+
+			expect(ret).to.be.a.number;
+			expect(ret).to.be.eql(10);
+		});
+
 		it('when a type string is specified', function(){
 			var vari;
 			var ret = evaluate(vari, 'string');
@@ -46,13 +54,28 @@ describe('Evaluate', function(){
 			expect(ret).to.be.eql('');
 		});
 		
+		it('when a type string and default value is specified', function(){
+			var vari;
+			var ret = evaluate(vari, 'string', 'just test');
+
+			expect(ret).to.be.a.string;
+			expect(ret).to.be.eql('just test');
+		});
+
 		it('when a type boolean is specified', function(){
 			var vari;
 			var ret = evaluate(vari, 'boolean');
 
 			expect(ret).to.be.a.boolean;
 			expect(ret).to.be.eql(false);
-		
+		});
+
+		it('when a type boolean and default value is specified', function(){
+			var vari;
+			var ret = evaluate(vari, 'boolean', true);
+
+			expect(ret).to.be.a.boolean;
+			expect(ret).to.be.eql(true);
 		});
 		
 		it('when a type date is specified', function(){
@@ -61,7 +84,15 @@ describe('Evaluate', function(){
 
 			expect(ret).to.be.a.string;
 			expect(ret).to.be.eql(new Date());
+		});
 		
+		it('when a type date and default value is specified', function(){
+			var vari;
+      var nDate = new Date(1994, 05, 03)
+			var ret = evaluate(vari, 'date', nDate);
+
+			expect(ret).to.be.a.string;
+			expect(ret).to.be.eql(nDate);
 		});
 		
 		it('when a type object is specified', function(){
@@ -72,12 +103,28 @@ describe('Evaluate', function(){
 			expect(ret).to.be.eql({});
 		});
 		
+		it('when a type object and default value is specified', function(){
+			var vari;
+			var ret = evaluate(vari, 'object', {just: 'test'});
+
+			expect(ret).to.be.an.object;
+			expect(ret).to.be.eql({just: 'test'});
+		});
+		
 		it('when a type array is specified', function(){
 			var vari;
 			var ret = evaluate(vari, 'array');
 
 			expect(ret).to.be.an.array;
 			expect(ret).to.be.eql([]);
+		});
+		
+		it('when a type array and default value is specified', function(){
+			var vari;
+			var ret = evaluate(vari, 'array', [1, 2, 3]);
+
+			expect(ret).to.be.an.array;
+			expect(ret).to.be.eql([1, 2, 3]);
 		});
 	});
 
