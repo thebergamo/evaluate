@@ -7,52 +7,62 @@ var ensure = {
 	'array': ensureArray
 };
 
-function ensureNumber(vari) {
+function ensureNumber(vari, def) {
 	if(typeof vari !== 'number' && typeof vari !== 'undefined') {
 		throw new TypeError('Your variable is already setted and isn\'t a Number');	
 	}	
 
-	return vari ? vari : 0;
+  def = def ? def : 0;
+
+	return vari ? vari : def;
 }
 
-function ensureBoolean(vari) {
+function ensureBoolean(vari, def) {
 	if(typeof vari !== 'boolean' && typeof vari !== 'undefined') {
 		throw new TypeError('Your variable is already setted and isn\'t a Boolean');	
 	}	
 
-	return vari ? vari : false;
+  def = def ? def : false;
+
+	return vari ? vari : def;
 }
 
-function ensureString(vari) {
+function ensureString(vari, def) {
 	if(typeof vari !== 'string' && typeof vari !== 'undefined') {
 		throw new TypeError('Your variable is already setted and isn\'t a String');	
-	}	
+	}
 
-	return vari ? vari : '';
+  def = def ? def : '';  
+
+	return vari ? vari : def;
 }
 
-function ensureDate(vari) {
+function ensureDate(vari, def) {
 	if(!(vari instanceof Date) && typeof vari !== 'undefined') {
 		throw new TypeError('Your variable is already setted and isn\'t a Date');	
-	}	
+  }
+  
+  def = def ? def : new Date();  
 
-	return vari ? vari : new Date();
+	return vari ? vari : def;
 }
 
-function ensureObject(vari) {
+function ensureObject(vari, def) {
 	if(typeof vari !== 'object' && typeof vari !== 'undefined') {
 		throw new TypeError('Your variable is already setted and isn\'t an Object');	
 	}	
 
-	return vari ? vari : {};
+  def = def ? def : {};
+	return vari ? vari : def;
 }
 
-function ensureArray(vari) {
+function ensureArray(vari, def) {
 	if(!Array.isArray(vari) && typeof vari !== 'undefined') {
 		throw new TypeError('Your variable is already setted and isn\'t an Array');	
 	}	
 
-	return vari ? vari : [];
+  def = def ? def : [];
+	return vari ? vari : def;
 }
 
 module.exports = ensure;
